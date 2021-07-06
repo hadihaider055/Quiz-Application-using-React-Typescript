@@ -1,38 +1,262 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&family=Oleo+Script:wght@700&family=Open+Sans&family=Acme&display=swap");
+body {
+  background-image: url("./assets/bg-img.jpg");
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-repeat: no-repeat;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loading {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 250px;
+}
+.quiz__heading {
+  text-align: center;
+  color: rgb(83, 0, 102);
+  font-family: "Oleo Script", cursive;
+  font-size: 50px;
+}
+.quiz__field {
+  box-shadow: 0px 0px 10px rgba(83, 0, 102, 0.279);
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px solid rgba(66, 0, 66, 0.128);
+}
+.quiz__field__header {
+  height: 50px;
+  width: 100%;
+  box-shadow: 0 9px 10px rgba(83, 0, 102, 0.13);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgb(58, 0, 71);
+}
+.quiz__header__name {
+  font-size: 16px;
+  font-family: Ubuntu, sans-serif;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: 40px;
+}
+.quiz__header__score {
+  font-size: 16px;
+  font-family: Ubuntu, sans-serif;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-right: 40px;
+}
+.quiz__field__body {
+  /* padding: 30px; */
+}
+.quiz__question {
+  font-family: Open Sans, sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+  padding-left: 30px;
+}
+.quiz__label {
+  padding-left: 20px;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  font-weight: bolder;
+}
+.quiz__radio {
+  padding: 50px;
+}
+input[type="radio"] {
+  margin: 15px 15px;
+}
+.quiz__submit {
+  margin: 20px 30px;
+  background-color: rgb(83, 0, 102);
+  border-radius: 30px;
+  padding: 10px 10px;
+  width: 140px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 2px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.quiz__submit:hover {
+  transform: translateY(-5px);
+  background-color: rgba(83, 0, 102, 0.888);
+  transition: 0.7s all ease-in-out;
+}
+.intro__div {
+  margin: 0 auto;
+  margin-top: 20vh;
+  width: 100%;
+  height: 100%;
+  display: block;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.intro__form {
+  margin: 0 auto;
+}
+.intro__input {
+  margin: 0 auto;
+  display: block;
+  width: 300px;
+  height: 4px;
+  border-radius: 30px;
+  padding: 20px;
+  outline: none;
+  font-family: Open Sans, sans-serif;
+  letter-spacing: 1px;
+  background-color: transparent;
+  font-weight: bolder;
+  color: rgb(83, 0, 102);
+  border: 2px solid rgb(67, 0, 82);
+}
+.intro__submit {
+  margin: 30px 30px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: rgb(83, 0, 102);
+  border-radius: 30px;
+  padding: 10px 10px;
+  width: 140px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 2px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+.intro__submit:hover {
+  transform: translateY(-5px);
+  background-color: rgba(83, 0, 102, 0.888);
+  transition: 0.7s all ease-in-out;
+}
+.form__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.quiz__difficulty {
+  margin-top: 30px;
+  margin-left: 13px;
+  border-radius: 10px;
+  height: 25px;
+  outline: none;
+  font-family: Open Sans, sans-serif;
+  background-color: transparent;
+  font-weight: bolder;
+  color: rgb(83, 0, 102);
+  border: 2px solid rgb(67, 0, 82);
+  padding-left: 3px;
+}
+.quiz__question__length {
+  margin: 0 auto;
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-right: 15px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media (min-width: 100px) and (max-width: 450px) {
+  .quiz__heading {
+    font-size: 35px;
+  }
+  .form__option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .quiz__difficulty {
+    font-size: 9px;
+    width: 120px;
+    margin-left: 5px;
+  }
+  .intro__input {
+    width: 230px;
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .quiz__field {
+    width: 300px;
   }
-  to {
-    transform: rotate(360deg);
+  .quiz__header__name {
+    font-size: 8px;
+    font-family: Ubuntu, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-left: 10px;
+  }
+  .quiz__header__score {
+    font-size: 8px;
+    font-family: Ubuntu, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-right: 10px;
+  }
+  .quiz__field__body {
+    /* padding: 30px; */
+  }
+  .quiz__question {
+    font-family: Open Sans, sans-serif;
+    letter-spacing: 1px;
+    font-size: 8px;
+    padding-left: 20px;
+  }
+  .quiz__label {
+    padding-left: 20px;
+    font-family: Open Sans, sans-serif;
+    font-size: 9px;
+    font-weight: bolder;
+  }
+  .quiz__radio {
+    /* padding: 50px; */
+  }
+  input[type="radio"] {
+    margin: 1px 15px;
+    width: 7px;
+  }
+  .quiz__submit {
+    margin: 20px 30px;
+    background-color: rgb(83, 0, 102);
+    border-radius: 30px;
+    height: 20px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    letter-spacing: 2px;
+    font-size: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+  .quiz__question__length {
+    font-size: 8px;
   }
 }
+/* @media (min-width: 351px) and (max-width: 600px) {
+  .quiz__field {
+    width: 300px;
+  }
+} */

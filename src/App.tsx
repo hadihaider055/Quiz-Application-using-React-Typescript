@@ -35,7 +35,6 @@ function App() {
     else {
       setScoreScreen(true);
       setCurrentQuestion(0);
-      setScore(0);
     }
   };
   const handleUserSubmit = (ev: React.FormEvent<EventTarget>) => {
@@ -44,6 +43,7 @@ function App() {
   };
   const handleRestart = () => {
     setScoreScreen(false);
+    setScore(0);
     setQuizIntro(true);
   };
   if (scoreScreen === true)

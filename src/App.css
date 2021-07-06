@@ -168,7 +168,36 @@ input[type="radio"] {
   margin-bottom: 10px;
   margin-right: 15px;
 }
-
+.score__h1 {
+  text-align: center;
+  color: rgb(83, 0, 102);
+  text-shadow: 0px 0px 10px rgba(83, 0, 102, 0.306);
+  font-weight: bolder;
+  font-size: 30px;
+}
+.score__btn {
+  margin: 30px 30px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: rgb(83, 0, 102);
+  border-radius: 30px;
+  padding: 10px 10px;
+  width: 140px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 2px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+.score__btn:hover {
+  transform: translateY(-5px);
+  background-color: rgba(83, 0, 102, 0.888);
+  transition: 0.7s all ease-in-out;
+}
 @media (min-width: 100px) and (max-width: 450px) {
   .quiz__heading {
     font-size: 35px;

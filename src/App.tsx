@@ -12,6 +12,7 @@ function App() {
   let [quizIntro, setQuizIntro] = useState(true);
   let [questionLength, setQuestionLength] = useState(5);
   let [difficulty, setDifficulty] = useState("easy");
+  let [scoreScreen, setScoreScreen] = useState(false);
   useEffect(() => {
     async function fetchData() {
       const questions = await QuizDetails(questionLength, difficulty);
@@ -32,8 +33,7 @@ function App() {
     if (currentQuestion !== quiz.length - 1)
       setCurrentQuestion(++currentQuestion);
     else {
-      alert("Quiz Completed! Your Score is: " + score);
-      setQuizIntro(true);
+      setScoreScreen(true);
       setCurrentQuestion(0);
       setScore(0);
     }
@@ -42,6 +42,25 @@ function App() {
     ev.preventDefault();
     setQuizIntro(false);
   };
+  const handleRestart = () => {
+    setScoreScreen(false);
+    setQuizIntro(true);
+  };
+  if (scoreScreen === true)
+    return (
+      <div className="score__div">
+        <h1 className="quiz__heading">Quiz Application</h1>
+        <h1 className="score__h1">Your score is : {score}</h1>
+        <button
+          type="button"
+          onClick={handleRestart}
+          className="score__btn"
+          value="Restart"
+        >
+          Restart
+        </button>
+      </div>
+    );
   if (!quiz.length) return <img src={Gif1} alt="loading" className="loading" />;
   return (
     <div className="App">
